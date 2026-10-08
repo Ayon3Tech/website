@@ -1,122 +1,1131 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayon3 - Monaco</title>
-  <meta name="title" content="Ayon3 - Monaco">
-  <meta name="description" content="Together, build your future blockchain-based information technology.">
-  <meta name="keywords" content="Ayon3, Blockchain, Information Technology, IT, Monaco, Confidential, Secure">
-  <meta name="author" content="Ayon3">
-  <meta name="robots" content="index, follow">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Consultant — Technical Program Manager Senior, Architecture Cloud, IA et blockchain." />
+<meta name="title" content="Ayon3 - Monaco">
+<meta name="keywords" content="Ayon3, Blockchain, Information Technology, IT, Monaco, Confidential, Secure, Cloud, Architecture, AI, IA, TPM, Program Management, Engineering Management">
+<meta name="author" content="Ayon3">
+<meta name="robots" content="index, follow">
+<title>Ayon3 - Monaco</title>
 
-  <link rel="icon" type="image/png" href="assets/logo-tiny.png">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    body {
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.7);
-      background-size: cover;
-      background-position: center;
-    }
-    
-    .container {
-      background-color: rgba(0, 0, 0, 1);
-      backdrop-filter: blur(4px);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 28rem;
-      width: 100%;
-    }
-    
-    .logo-container {
-      margin-bottom: 2rem;
-      position: relative;
-      width: 20rem;
-      height: 20rem;
-    }
-    
-    .logo {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    
-    .button-container {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      width: 100%;
-    }
-    
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0.375rem;
-      font-weight: 500;
-      padding: 1.5rem 1rem;
-      font-size: 1.125rem;
-      line-height: 1.5rem;
-      text-decoration: none;
-      width: 100%;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    
-    .primary-button {
-      background-color: #000000;
-      color: white;
-      border: 1px solid #000000;
-    }
-    
-    .primary-button:hover {
-      background-color: #333333;
-    }
-    
-    .outline-button {
-      background-color:#862627;
-      color: #ffffff;
-      border: 1px solid #000000;
-    }
-    
-    .outline-button:hover {
-      background-color: #494949;
-    }
-    
-    @media (max-width: 640px) {
-      .button-container {
-        flex-direction: column;
-      }
-    }
-  </style>
+<link rel="icon" type="image/png" href="assets/logo-tiny.png">
+<style>
+/* ============================================================
+   CHARTE GRAPHIQUE — MODIFIEZ CES VARIABLES POUR PERSONNALISER
+   ============================================================
+   3 familles de couleurs :
+   - --carbon-* : fond carbone (textures fibre de carbone)
+   - --metal-*  : gris métal brossé (cartes, barres, encadrés)
+   - --red-*    : métal rouge (accents, CTA, liens)
+   Remplacez librement les codes couleurs ci-dessous.
+   ============================================================ */
+:root {
+  /* --- Couleurs principales --- */
+  --carbon-0: #07090b;          /* fond le plus sombre */
+  --carbon-1: #0c0f12;          /* fond carbone standard */
+  --carbon-2: #14181d;          /* carbone clair (survol, séparations) */
+  --metal-0: #262c33;           /* métal sombre */
+  --metal-1: #3a4149;           /* métal brossé */
+  --metal-2: #586069;           /* métal clair */
+  --red-0: #6e1212;             /* métal rouge sombre */
+  --red-1: #b3202a;             /* métal rouge */
+  --red-2: #e04338;             /* métal rouge clair (hover) */
+  /* --- Textes --- */
+  --text: #e9ecef;
+  --text-dim: #9aa4ad;
+  --text-faint: #6b747d;
+  /* --- Typographie --- */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: "Bahnschrift", "DIN Alternate", "Avenir Next Condensed", "Arial Narrow", system-ui, sans-serif;
+  --radius: 10px;
+  --maxw: 1120px;
+}
+
+/* ============================================================
+   TEXTURES — fibre de carbone, métal brossé, métal rouge
+   ============================================================ */
+/* Fond général : tresse de carbone */
+.carbon-bg {
+  background-color: rgb(32, 32, 32);
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,1)), 
+    linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+    linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+    linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+  background-size: 100% 100%, 10px 10px, 10px 10px, 10px 5px;
+  background-position: 0px 0px, 0px 0px, 5px 5px, 0px 0px;
+}
+
+/* Carte en métal brossé */
+.metal-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  /* Base métal sombre */
+  background:
+    /* Micro-rayures */
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,.025) 0px,
+      rgba(255,255,255,.025) 1px,
+      rgba(0,0,0,.035) 1.5px,
+      transparent 2.5px,
+      transparent 4px
+    ),
+
+    /* Rayures secondaires irrégulières */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(255,255,255,.018) 7px,
+      transparent 8px,
+      transparent 15px
+    ),
+
+    /* Variation du brossage */
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.035),
+      transparent 18%,
+      rgba(0,0,0,.045) 42%,
+      transparent 65%,
+      rgba(255,255,255,.025)
+    ),
+
+    /* Corps du métal */
+    linear-gradient(
+      145deg,
+      #69727b 0%,
+      #4d565f 13%,
+      #363e46 31%,
+      #252c33 49%,
+      #343c44 65%,
+      #555e67 82%,
+      #292f36 100%
+    );
+
+  background-blend-mode:
+    soft-light,
+    overlay,
+    soft-light,
+    normal;
+
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius);
+
+  /* Profondeur + bords métalliques */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 -1px 0 rgba(0,0,0,.65),
+    inset 1px 0 0 rgba(255,255,255,.035),
+    inset -1px 0 0 rgba(0,0,0,.22),
+    0 14px 32px rgba(0,0,0,.48);
+
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.metal-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -40% -20%;
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent 35%,
+      rgba(255,255,255,.015) 42%,
+      rgba(255,255,255,.10) 48%,
+      rgba(255,255,255,.025) 54%,
+      transparent 62%
+    );
+
+  transform: translateX(-45%) skewX(-12deg);
+  opacity: .65;
+
+  transition:
+    transform .7s cubic-bezier(.2,.8,.2,1),
+    opacity .35s ease;
+
+  pointer-events: none;
+}
+
+.metal-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(255,255,255,.018) 3.5px,
+      transparent 4px
+    );
+
+  opacity: .55;
+  mix-blend-mode: overlay;
+}
+
+.metal-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255,255,255,.22);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.28),
+    inset 0 -1px 0 rgba(0,0,0,.65),
+    inset 1px 0 0 rgba(255,255,255,.05),
+    inset -1px 0 0 rgba(0,0,0,.25),
+    0 20px 42px rgba(0,0,0,.55);
+}
+
+.metal-card:hover::before {
+  transform: translateX(45%) skewX(-12deg);
+  opacity: .95;
+}
+
+/* Barre / bandeau en métal rouge brossé */
+.red-metal {
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 3px),
+    linear-gradient(165deg, var(--red-2) 0%, var(--red-1) 38%, var(--red-0) 72%, #8c1d1d 100%);
+  border: 1px solid rgba(255,120,100,.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 8px 24px rgba(179,32,42,.35);
+}
+
+/* Bande séparatrice carbone/rouge */
+.stripe-red {
+  height: 5px;
+  background: repeating-linear-gradient(90deg, var(--red-1) 0 22px, var(--red-0) 22px 44px);
+  box-shadow: 0 1px 0 rgba(255,255,255,.08) inset;
+}
+
+/* ============================================================
+   BASE DU SITE
+   ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4 { font-family: var(--font-heading); letter-spacing: .04em; text-transform: uppercase; }
+section { padding: 84px 20px; }
+.container { max-width: var(--maxw); margin: 0 auto; }
+.sec-title { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: 8px; }
+.sec-kicker {
+  display: inline-block; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--red-2); margin-bottom: 10px; font-weight: 700;
+}
+.sec-sub { color: var(--text-dim); max-width: 720px; margin-bottom: 42px; }
+a { color: var(--red-2); text-decoration: none; }
+a:hover { color: #ff6f5e; }
+
+/* Apparition au scroll */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+header.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 1px, transparent 1px 3px),
+    linear-gradient(180deg, rgba(20,24,29,.97), rgba(12,15,18,.97));
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+}
+nav.bar {
+  max-width: var(--maxw); margin: 0 auto; padding: 14px 20px;
+  display: grid; grid-template-columns: 2fr auto 1fr; align-items: center; gap: 18px;
+}
+.brand { justify-self: start; display: flex; align-items: center; gap: 12px; color: var(--text); font-size: 1.90rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-family: var(--font-heading); }
+.brand .logo { width: 132px; height: 100px; object-fit: contain; display: block; }
+.navlinks { justify-self: center; display: flex; gap: 4px; list-style: none; margin-left: auto; align-items: center; }
+.navlinks a {
+  color: var(--text-dim); font-size: .75rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+  padding: 8px 12px; border-radius: 6px; transition: color .2s, background .2s;
+}
+.navlinks a:hover, .navlinks a.active { color: var(--text); background: rgba(255,255,255,.06); }
+.lang-switch {
+  justify-self: end; display: flex; border: 1px solid rgba(255,255,255,.15); border-radius: 6px; overflow: hidden; margin-left: 6px;
+}
+.lang-switch button {
+  background: transparent; color: var(--text-dim); border: 0; padding: 7px 12px;
+  font-size: .78rem; font-weight: 700; letter-spacing: .1em; cursor: pointer; transition: .2s;
+}
+.lang-switch button.active { background: var(--red-1); color: #fff; }
+.burger { display: none; background: none; border: 1px solid rgba(255,255,255,.18); border-radius: 6px; color: var(--text); font-size: 1.3rem; padding: 6px 12px; cursor: pointer; margin-left: auto; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+#hero { position: relative; padding-top: 110px; padding-bottom: 110px; overflow: hidden; }
+#hero::before { /* halo rouge latéral */
+  content: ""; position: absolute; top: -140px; right: -160px; width: 560px; height: 560px;
+  background: radial-gradient(circle, rgba(224,67,56,.16), transparent 65%); pointer-events: none;
+}
+.hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 48px; align-items: center; }
+.hero-name { font-size: clamp(2.3rem, 5.6vw, 3.9rem); line-height: 1.05; margin: 14px 0 12px; }
+.hero-name .accent { color: transparent; background: linear-gradient(180deg, #f2a099, var(--red-1) 70%, var(--red-0)); -webkit-background-clip: text; background-clip: text; }
+.hero-role { font-size: 1.06rem; color: var(--text-dim); max-width: 560px; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 9px; margin: 26px 0 34px; }
+.chip {
+  font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+  padding: 7px 14px; border-radius: 999px;
+  background: linear-gradient(180deg, var(--carbon-2), var(--carbon-1));
+  border: 1px solid rgba(255,255,255,.14); color: var(--text-dim);
+}
+.chip.red { border-color: rgba(224,67,56,.5); color: #f4a79f; background: linear-gradient(180deg, rgba(179,32,42,.22), rgba(110,18,18,.12)); }
+.btn {
+  display: inline-block; padding: 14px 26px; border-radius: 8px;
+  font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem;
+  transition: transform .15s, filter .2s; cursor: pointer; border: 0;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.12); }
+.btn-primary { background: repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 3px), linear-gradient(165deg, var(--red-2), var(--red-1) 45%, var(--red-0)); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 10px 26px rgba(179,32,42,.4); }
+.btn-ghost { background: linear-gradient(180deg, var(--carbon-2), var(--carbon-1)); color: var(--text); border: 1px solid rgba(255,255,255,.16); }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Panneau héros : plaque métal brossé */
+.hero-panel { padding: 30px 28px; }
+.hero-panel h3 { font-size: .82rem; letter-spacing: .2em; color: var(--red-2); margin-bottom: 18px; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.stat { padding: 16px 14px; background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.07); border-radius: 8px; }
+.stat b { display: block; font-size: 1.6rem; font-family: var(--font-heading); color: #fff; line-height: 1.1; }
+.stat span { font-size: .74rem; color: var(--text-dim); letter-spacing: .06em; text-transform: uppercase; }
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: start; }
+.about-text p { color: var(--text-dim); margin-bottom: 16px; }
+.about-text strong { color: var(--text); }
+.about-facts { list-style: none; }
+.about-facts li { padding: 13px 16px; margin-bottom: 10px; border-radius: 8px; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.2)); border-left: 3px solid var(--red-1); font-size: .92rem; color: var(--text-dim); }
+.about-facts b { color: var(--text); display: block; font-size: .98rem; }
+
+/* Services */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.svc { padding: 30px 26px 26px; transition: transform .25s, box-shadow .25s; }
+.svc:hover { transform: translateY(-5px); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(0,0,0,.4), 0 18px 40px rgba(0,0,0,.55); }
+.svc .icon {
+  width: 52px; height: 52px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px; font-size: 1.5rem;
+}
+.svc .icon.red { background: repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 1px, transparent 1px 3px), linear-gradient(160deg, var(--red-2), var(--red-0)); box-shadow: inset 0 1px 0 rgba(255,255,255,.3); }
+.svc .icon.steel { background: repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 1px, transparent 1px 3px), linear-gradient(160deg, var(--metal-2), var(--metal-0)); box-shadow: inset 0 1px 0 rgba(255,255,255,.25); }
+.svc h3 { font-size: 1.02rem; margin-bottom: 10px; color: #fff; }
+.svc p { font-size: .9rem; color: var(--text-dim); margin-bottom: 14px; }
+.svc .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.svc .tags span { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(224,67,56,.4); color: #eab4ae; background: rgba(179,32,42,.14); }
+
+/* Compétences */
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.skill-cat { padding: 24px 24px 20px; }
+.skill-cat h3 { font-size: .88rem; letter-spacing: .16em; color: var(--red-2); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.skill-cat h3::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, var(--red-1), transparent); }
+.skill-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-items span {
+  font-size: .8rem; padding: 6px 12px; border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(0,0,0,.25));
+  border: 1px solid rgba(255,255,255,.1); color: var(--text);
+}
+
+/* Expérience */
+.timeline { position: relative; padding-left: 34px; }
+.timeline::before { content: ""; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 4px; border-radius: 4px;
+  background: repeating-linear-gradient(180deg, var(--metal-1) 0 14px, var(--carbon-2) 14px 20px); }
+.xp-item { position: relative; margin-bottom: 30px; }
+.xp-item::before { content: ""; position: absolute; left: -33px; top: 8px; width: 16px; height: 16px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff8b7a, var(--red-1) 55%, var(--red-0));
+  box-shadow: 0 0 0 4px rgba(179,32,42,.18), 0 0 18px rgba(224,67,56,.5); }
+.xp-card { padding: 22px 24px; }
+.xp-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+.xp-head h3 { font-size: 1.02rem; color: #fff; }
+.xp-head .co { color: var(--red-2); font-weight: 700; font-size: .88rem; }
+.xp-period { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #ffffff; white-space: nowrap; padding-top: 4px; }
+.xp-card p { font-size: .9rem; color: var(--text-dim); margin-bottom: 10px; }
+.xp-card ul { margin-left: 18px; color: var(--text-dim); font-size: .88rem; }
+.xp-card ul li { margin-bottom: 5px; }
+.xp-card ul li::marker { color: var(--red-1); }
+
+/* Formation */
+.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.edu { padding: 24px 22px; }
+.edu .badge { display: inline-block; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 800; padding: 5px 11px; border-radius: 999px; margin-bottom: 14px; background: rgba(224,67,56,.15); border: 1px solid rgba(224,67,56,.45); color: #f4a79f; }
+.edu h3 { font-size: .96rem; color: #fff; margin-bottom: 6px; }
+.edu p { font-size: .86rem; color: var(--text-dim); }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+#contact .contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: start; }
+.contact-info .metal-card { padding: 28px 26px; margin-bottom: 20px; }
+.contact-info h3 { font-size: .92rem; letter-spacing: .18em; margin-bottom: 12px; color: var(--red-2); }
+.contact-info p { font-size: .92rem; color: var(--text-dim); margin-bottom: 8px; }
+.contact-info .mail { font-size: 1.02rem; color: #fff; font-weight: 700; word-break: break-all; }
+form.contact-form { padding: 34px 32px; }
+form.contact-form h3 { margin-bottom: 22px; font-size: 1.05rem; }
+.f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.f-group { margin-bottom: 16px; }
+.f-group label { display: block; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 7px; }
+.f-group input, .f-group textarea, .f-group select {
+  width: 100%; padding: 12px 14px; border-radius: 8px; font: inherit; color: var(--text);
+  background: linear-gradient(180deg, rgba(0,0,0,.4), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.14); transition: border .2s, box-shadow .2s;
+}
+.f-group input:focus, .f-group textarea:focus, .f-group select:focus {
+  outline: none; border-color: var(--red-1); box-shadow: 0 0 0 3px rgba(179,32,42,.25);
+}
+.f-group textarea { min-height: 130px; resize: vertical; }
+.form-note { font-size: .76rem; color: var(--text-faint); margin-top: 14px; }
+.form-status { margin-top: 16px; padding: 13px 16px; border-radius: 8px; font-size: .88rem; display: none; }
+.form-status.ok { display: block; background: rgba(46,140,80,.16); border: 1px solid rgba(110,200,140,.4); color: #b7e6c6; }
+.form-status.err { display: block; background: rgba(179,32,42,.18); border: 1px solid rgba(224,67,56,.45); color: #f4c1ba; }
+
+/* ============================================================
+   OVERLAY "MENTIONS LÉGALES"
+   ============================================================ */
+.legal-overlay {
+  position: fixed; inset: 0; z-index: 100; display: none;
+  align-items: center; justify-content: center; padding: 20px;
+  background: rgba(7,9,11,.84); backdrop-filter: blur(5px);
+}
+.legal-overlay.open { display: flex; }
+.legal-modal { width: 100%; max-width: 760px; max-height: 84vh; overflow-y: auto; padding: 32px 34px 28px; }
+.legal-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 16px; margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.legal-head h3 { font-size: 1.15rem; }
+.legal-close {
+  width: 38px; height: 38px; border-radius: 8px; flex: none; cursor: pointer;
+  background: linear-gradient(180deg, var(--carbon-2), var(--carbon-1));
+  border: 1px solid rgba(255,255,255,.18); color: var(--text); font-size: 1rem; transition: .2s;
+}
+.legal-close:hover { color: var(--red-2); border-color: rgba(224,67,56,.5); }
+.legal-body h4 { font-size: .88rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red-2); margin: 20px 0 8px; }
+.legal-body h4:first-child { margin-top: 0; }
+.legal-body p { font-size: .9rem; color: var(--text-dim); margin-bottom: 10px; }
+.legal-body strong { color: var(--text); }
+.footer-link { color: var(--text-dim); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.footer-link:hover { color: var(--red-2); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer { border-top: 1px solid rgba(255,255,255,.08); padding: 34px 20px; background: var(--carbon-0); }
+footer .inner { max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: .8rem; color: var(--text-faint); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 940px) {
+  .services-grid, .edu-grid { grid-template-columns: 1fr 1fr; }
+  .hero-grid, .about-grid, #contact .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .navlinks {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0; padding: 10px 16px 16px;
+    background: rgba(12,15,18,.98); border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .navlinks.open { display: flex; }
+  .navlinks a { padding: 12px 10px; }
+  .burger { display: block; }
+  .lang-switch { margin-left: 0; }
+  .services-grid, .skills-grid, .edu-grid, .f-row { grid-template-columns: 1fr; }
+  section { padding: 64px 16px; }
+}
+</style>
 </head>
-<body>
-  <div class="container">
-    <div class="logo-container">
-      <img src="assets/logo.png" alt="" class="logo">
+<body class="carbon-bg">
+
+<header class="topbar">
+  <nav class="bar">
+    <a class="brand" href="#hero">
+      <img class="logo" src="assets/logo.png" alt="Logo">
+      <span id="brandName">…</span>
+    </a>
+    <ul class="navlinks" id="navLinks"></ul>
+    <div class="lang-switch" role="group" aria-label="Langue">
+      <button id="btnFr" type="button">FR</button>
+      <button id="btnEn" type="button">EN</button>
     </div>
-    
-    <div class="button-container">
-      <!-- <a href="/#" class="button primary-button">My Account</a> -->
-      <a href="mailto:contact@ayon3.com?subject=Information%20Request&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20Ayon3." class="button outline-button">Contact us</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </nav>
+</header>
+<div class="stripe-red"></div>
+
+<main>
+  <section id="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="sec-kicker" id="heroKicker"></span>
+        <h1 class="hero-name" id="heroName"></h1>
+        <p class="hero-role" id="heroRole"></p>
+        <div class="hero-tags" id="heroTags"></div>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary" id="ctaMain"></a>
+          <a href="#services" class="btn btn-ghost" id="ctaAlt"></a>
+        </div>
+      </div>
+      <aside class="metal-card bolts hero-panel reveal">
+        <h3 id="panelTitle"></h3>
+        <div class="stat-grid" id="statGrid"></div>
+      </aside>
     </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="reveal">
+        <span class="sec-kicker" id="aboutKicker"></span>
+        <h2 class="sec-title" id="aboutTitle"></h2>
+        <p class="sec-sub" id="aboutSub"></p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal" id="aboutText"></div>
+        <ul class="about-facts reveal" id="aboutFacts"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="reveal">
+        <span class="sec-kicker" id="svcKicker"></span>
+        <h2 class="sec-title" id="svcTitle"></h2>
+        <p class="sec-sub" id="svcSub"></p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="reveal">
+        <span class="sec-kicker" id="skKicker"></span>
+        <h2 class="sec-title" id="skTitle"></h2>
+        <p class="sec-sub" id="skSub"></p>
+      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="reveal">
+        <span class="sec-kicker" id="xpKicker"></span>
+        <h2 class="sec-title" id="xpTitle"></h2>
+        <p class="sec-sub" id="xpSub"></p>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="reveal">
+        <span class="sec-kicker" id="eduKicker"></span>
+        <h2 class="sec-title" id="eduTitle"></h2>
+        <p class="sec-sub" id="eduSub"></p>
+      </div>
+      <div class="edu-grid" id="eduGrid"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="reveal">
+        <span class="sec-kicker" id="ctKicker"></span>
+        <h2 class="sec-title" id="ctTitle"></h2>
+        <p class="sec-sub" id="ctSub"></p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="metal-card bolts">
+            <h3 id="ctInfoTitle"></h3>
+            <p id="ctInfoWhere"></p>
+            <p class="mail" id="ctMail"></p>
+            <p id="ctInfoAvail"></p>
+          </div>
+          <div class="metal-card">
+            <h3 id="ctInfoProTitle"></h3>
+            <p id="ctInfoProName"></p>
+            <p id="ctInfoProAddress"></p>
+            <p id="ctInfoProCity"></p>
+          </div>
+        </div>
+        <form class="contact-form metal-card bolts reveal" id="contactForm" novalidate>
+          <h3 id="formTitle"></h3>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="fName" id="lblName"></label>
+              <input id="fName" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="f-group">
+              <label for="fEmail" id="lblEmail"></label>
+              <input id="fEmail" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="fCompany" id="lblCompany"></label>
+              <input id="fCompany" name="company" type="text" autocomplete="organization" />
+            </div>
+            <div class="f-group">
+              <label for="fTopic" id="lblTopic"></label>
+              <select id="fTopic" name="topic"></select>
+            </div>
+          </div>
+          <div class="f-group">
+            <label for="fMsg" id="lblMsg"></label>
+            <textarea id="fMsg" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="btnSend"></button>
+          <p class="form-note" id="formNote"></p>
+          <div class="form-status" id="formStatus" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span id="footerLeft"></span>
+    <a href="#" id="legalLink" class="footer-link"></a>
+    <span id="footerRight"></span>
   </div>
+</footer>
+
+<!-- Overlay Mentions légales -->
+<div class="legal-overlay" id="legalOverlay" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+  <div class="metal-card bolts legal-modal">
+    <div class="legal-head">
+      <h3 id="legalTitle"></h3>
+      <button class="legal-close" id="legalClose" type="button" aria-label="Fermer">✕</button>
+    </div>
+    <div class="legal-body" id="legalBody"></div>
+  </div>
+</div>
+
+<script>
+  
+/* ================================================================
+   CONFIGURATION
+   ================================================================ */
+const CONFIG = {
+  CONTACT_EMAIL:  "contact@ayon3.com",   /* ← METTRE VOTRE EMAIL ICI */
+  FORM_MODE:      "mailto",                    /* "mailto" ou "formsubmit" */
+  OWNER_NAME:     "AYON3",                /* ← METTRE VOTRE NOM ICI */
+  LOGO_INITIALS:  "A3",                        /* initiales pour logo */
+  LOCATION:       "Monaco",  /* facultatif */
+  FOOTER_NOTE:    ""                            /* texte libre additionnel, facultatif */
+};
+
+/* ================================================================
+   CONTENU BILINGUE FR / EN — modifiez librement vos textes ici
+   ================================================================ */
+const DATA = {
+fr: {
+  brand: CONFIG.OWNER_NAME,
+  nav: ["Accueil|hero","À propos|about","Services|services","Compétences|skills","Expérience|experience","Formation|education","Contact|contact"],
+  heroKicker: "Consultant indépendant",
+  heroName: 'Votre apport en <span class="accent">maîtrise technologique</span> au service de <span class="accent">votre business</span>.',
+  heroRole: " Manager de Programme Senior · Architecture Cloud · Accélération IA · Blockchain/Web3. Plus de 20 ans à concevoir, coder et livrer des plateformes pour des millions d'utilisateurs ; à transformer la vision des directions en roadmaps tenables.",
+  tags: ["Manager Senior","Azure · GCP","IA appliquée","Blockchain / Web3","Plate-formes Data","PMP · Agilite"],
+  ctaMain: "Discutons de votre projet",
+  ctaAlt: "Découvrir mes services",
+  panelTitle: "Chiffres clés",
+  stats: [["20+","ans d'expérience"],["4","industries"],["10–50","personnes dans mes équipes"],["150+","applications pilotées"]],
+  aboutKicker: "À propos",
+  aboutTitle: "Des deux côtés de la table",
+  aboutSub: "Architecte, développeur, responsable de département, fondateur : je parle autant le langage des ingénieurs que celui des comités de direction.",
+  aboutParas: [
+    "Consultant indépendant avec un esprit d'entrepreneur, <strong>depuis plus de 20 ans des deux côtés de la table</strong> : concevoir, coder et livrer des produits et plateformes IT pour des millions d'utilisateurs, mais aussi dialoguer avec les métiers et les directions générales en tant qu'architecte d'entreprise et responsable de département.",
+    "Expérience éprouvée dans les industries <strong>Blockchain/Web3, Énergie, Télécom et Voyage</strong> : construction de plateformes, architecture cloud (GCP, Azure), adoption de l'IA, développement logiciel et gestion de programme — y compris recruter et faire grandir des équipes de 10 à 50 personnes pour délivrer nos promesses au business.",
+    "Diplômé d'un double master entre informatique et stratégie/marketing. À l'aise dans une situation technique ambiguë : je comprends ce dont le client a <em>réellement</em> besoin, ce qu'il achète — et mets en œuvre les projets pour livrer à l'heure."
+  ],
+  facts: [
+    ["Vision → Roadmap","Transformer une ambition en roadmap engageable pour le leadership."],
+    ["Cloud & IA pragmatiques","Azure, GCP, Kubernetes, cadrages IA pour une adoption performante au service du business."],
+    ["Programmes & Livraison","Création, rénovation, migration zéro impact, délais tenus, équipes techniques et métiers alignées."],
+    ["Web3 opérationnel","Protocole Open Source (Polkadot), prototypes produits business, expérience développeur, conférences et hackathons."]],
+  svcKicker: "Offre de services",
+  svcTitle: "Ce que je peux faire pour vous",
+  svcSub: "Des missions courtes et ciblées, ou des programmes pluriannuels : la même exigence de qualité, du premier audit aux dernières livraisons du programmme.",
+  services: [
+    { icon:"🎯", red:true, title:"Gestion de programmes techniques (TPM)", desc:"Pilotage de bout en bout de programmes complexes : roadmap, risques, synchronisation multi-équipes, jalons et livraison sur le marché.", tags:["Roadmaps","Risques","Multi-équipes","Go-To-Market"] },
+    { icon:"☁️", red:false, title:"Architecture cloud (Azure & GCP)", desc:"Conception de plateformes cloud hybrides et souveraines : Kubernetes, micro-datacenters, multi-sites/régions, standards DevOps/SRE.", tags:["Azure","GCP","AKS","Kubernetes","DevOps"] },
+    { icon:"🤖", red:true, title:"IA appliquée & prototypage", desc:"Audit des usages, définition des garde-fous (bonnes pratiques, sécurisation des données) et prototypage rapide avec les outils IA (ex: Claude, DeepSeek) pour accélérer dans vos équipes et vos produits.", tags:["Claude","DeepSeek","Azure AI"] },
+    { icon:"⛓️", red:false, title:"Blockchain & Web3", desc:"Prototypage de produits décentralisés et protocole Open Source (Polkadot), observabilité réseau, amélioration de l'expérience développeur, organisation d'événements et hackathons.", tags:["Polkadot","DevEx","Prototypes"] },
+    { icon:"🗄️", red:false, title:"Plateformes de données & streaming", desc:"Migration sans interruption, pipelines automatisés, streaming et analytics : Cassandra, Kafka, Spark, Hadoop, PostgreSQL.", tags:["Cassandra","Kafka","Spark"] },
+    { icon:"🚀", red:true, title:"Transformation IT & coaching d'équipes", desc:"Culture d'ingénierie au service du business : Scrum/Kanban, SAFe, software craftsmanship, recrutement, formation et pilotage d'équipes de 10 à 50 personnes.", tags:["SAFe","Agilité","Team Lead"] }
+  ],
+  skKicker: "Compétences",
+  skTitle: "Ma boîte à outils",
+  skSub: "Toujours un pied dans la technique, enrichi par l'IA, au service de la livraison.",
+  skills: [
+    { cat:"Cloud & DevOps", items:["Azure","GCP","Kubernetes / AKS","CloudFoundry","PaaS / CaaS","Linux"] },
+    { cat:"IA", items:["Claude (Anthropic)","DeepSeek","Claude Code","Azure AI","Cas d'usage métier & IT"] },
+    { cat:"Données", items:["Apache Cassandra","Kafka","Spark","Hadoop","MySQL Cluster","PostgreSQL"] },
+    { cat:"Web3", items:["Polkadot","Testnets","Agents","Individualité","Paiements token"] },
+    { cat:"Pilotage", items:["PMP®","Scrum","Kanban","SAFe®","Budgets 8~10 M€","Cadrage/Roadmap/OKR"] },
+    { cat:"Architecture", items:["Cloud","Pub/Sub","ETL","Bases de données","Temps réel/événementiel","Design d'API"] }
+  ],
+  xpKicker: "Parcours",
+  xpTitle: "Mes expériences",
+  xpSub: "Des plateformes critiques aux prototypes Web3 : un fil conducteur, servir le business et la performance de l'entreprise pour satisfaire ses clients.",
+  xp: [
+    { role:"Senior Technical Program Manager", co:"Blockchain/Web3", period:"2024 – 2026", 
+    desc:"Product Engineering : prototypage de produits démontrant les capacités du protocole open source Polkadot et amélioration de l'expérience développeur.", 
+    bullets:[
+      "Roadmap produits synchronisant 4 départements d'ingénierie, avec usage des outils IA (Claude Code, DeepSeek) pour superviser, gérer les risques et sécuriser la livraison des différents prototypes.",
+      "Co-leader de la livraison du socle technique au Web3 Summit 2026 : environnement Polkadot pour 800+ participants et 100+ développeurs, application mobile, paiements exclusifs en tokens (expérience Web2 sur un socle Web3).",
+      "Leader de l'implémentation de 'dot.li', l'agent Web Polkadot décentralisé permettant aux utilisateurs de naviguer dans l'écosystème produits."] 
+    },
+    { role:"Fondateur & CEO — Consultant IT indépendant", co:"Ayon3", period:"Depuis 2024", 
+    desc:"Conseil et accompagnement auprès d'entreprises sur les enjeux autour de leurs systèmes d'information, le Cloud et l'IA.", 
+    bullets:[] 
+    },
+    { role:"Architecte d'entreprise IT", co:"Energies", period:"2023 – 2024", 
+    desc:"Montée en puissance sur les technologies Cloud et IA (Microsoft Azure) pour des usages couplés aux infrastructures onshore/offshore (FPSO).", 
+    bullets:[
+      "Design et implémentation d'un Azure Kubernetes Service privé comme runtime standard des applications conteneurisées.",
+      "Audit et activation de services IA pour l'exploration-production, avec garde-fous d'adoption.",
+      "Architectures de référence : automatisation de processus par IA, Web apps, logiciels de production pour l'industrie pétrolière."] 
+    },
+    { role:"Directeur de 'Links Digital Experiences'", co:"Télécoms", period:"2019 – 2023", 
+    desc:"Direction d'un département de 20 personnes (architecture, stratégie, business development, coaching Agile, UX/UI, FabLab) au sein d'un domaine IT de 600 personnes.", 
+    bullets:[
+      "Membre du comité d'architectes France, auprès des directions générales, et interactions avec des conseillers externes (Oliver Wyman, BCG).",
+      "Stratégie Cloud pour la DSI France (GCP, Azure, on-premise) et agenda de rénovation IT (budget annuel 8~10 M€) : open source first, API, architecture temps réel, Plate-formes Data, IA.",
+      "Transformation du domaine IT dans le cadre de la réorganisation IT-S (15 000 collaborateurs) et déploiement de la culture Cloud/Agile (Scrum, Kanban, SAFe, DevOps, CloudFoundry, Kubernetes).",
+      "Représentation de l'architecture de l'opérateur au sein de l'AF2M (association des opérateurs mobiles)."] 
+    },
+    { role:"Senior Technical Program Manager / Lead Architect — Smart Data Factory", co:"Télécoms", period:"2015 – 2018", 
+    desc:"Architecte leader et gestionnaire de programme pour la plateforme Data du groupe basée sur Cassandra.", 
+    bullets:[
+      "Migration sans interruption de la plateforme de production MySQL Cluster/PostgreSQL vers Apache Cassandra.",
+      "Streaming et analytics (Kafka, Spark, Hadoop), pipeline d'intégration générique via fichiers ou temps réel.",
+      "Réplication de 50+ sources de données du SI France, au service de 150+ applications toux canaux (Web, Mobile, TV, Boutique)."] 
+    },
+    { role:"Chef de projet & consultant IT senior", co:"ESN & éditeurs de logiciels", period:"2005 – 2015", 
+    desc:"Du développement d'ETL à la direction d'une équipe de 25 consultants pour des grands comptes et des startups.", 
+    bullets:[
+      "Management d'un portefeuille de clients : Spatial & Défense, Voyages & Tourisme, Startups.",
+      "Construction ETL pour des plateformes data distribuées (MySQL Cluster, PostgreSQL), puis responsable de l'intégration des clients.",
+      "Migrations techniques entre environnements propriétaires (ex: IBM, Oracle) et open source développés en interne."] 
+    }
+  ],
+  eduKicker: "Formation & certifications",
+  eduTitle: "Diplômes et certifications",
+  eduSub: "Une formation à la croisée de la technique et de la stratégie.",
+  edu: [
+    { badge:"MSc", title:"Cardiff University", desc:"MSc : informatique, marketing, gestion stratégique, administration des affaires (2005)." },
+    { badge:"Master", title:"Polytech Nice Sophia", desc:"Master en technologies de l'information (2005)." },
+    { badge:"Certification", title:"PMP® — Project Management Institute", desc:"Certifié Project Management Professional (2016)." },
+    { badge:"Certification", title:"SAFe® 4 Agilists", desc:"Certified RTE, System Architect (2018)." },
+    { badge:"Certification", title:"Google Cloud Platform", desc:"Certified Professional Cloud Architect (2023)." }
+  ],
+  ctKicker: "Contact",
+  ctTitle: "Parlons de votre projet",
+  ctSub: "Audit, prototype, programme de plusieurs mois ou simple question : je réponds à vos besoins.",
+  ctInfoTitle: "Coordonnées",
+  ctInfoWhere: "Basé à " + CONFIG.LOCATION + " — interventions en présentiel ou à distance.",
+  ctInfoAvail: "Disponible pour des missions courtes ou longues, en Principauté et à l'international.",
+  ctInfoProTitle: "Siège Social",
+  ctInfoProName: "S.U.R.L. AYON3",
+  ctInfoProAddress: "17, Avenue Albert II",
+  ctInfoProCity: "98000 MONACO - Principauté de Monaco",
+  formTitle: "Envoyer votre besoin",
+  lblName: "Nom *",
+  lblEmail: "Email *",
+  lblCompany: "Société",
+  lblTopic: "Sujet",
+  topics: ["Audit / cadrage","Programme / pilotage","Architecture & Cloud","IA","Web3 / autre"],
+  lblMsg: "Votre message *",
+  btnSend: "Envoyer",
+  formNote: " * champs obligatoires. Vos données ne sont utilisées que pour vous répondre.",
+  formOk: "Votre logiciel de messagerie s'ouvre avec le message pré-rempli — il ne reste qu'à cliquer sur « Envoyer ». Si rien ne se passe, écrivez-moi directement à :",
+  formOkFs: "Message envoyé ! Je vous réponds très vite. (Pensez à valider le premier email d'activation FormSubmit.)",
+  formErr: "Merci de renseigner au minimum votre nom, un email valide et votre message.",
+  footerLeft: "© " + new Date().getFullYear() + " " + CONFIG.OWNER_NAME + ". Tous droits réservés." + (CONFIG.FOOTER_NOTE ? " " + CONFIG.FOOTER_NOTE : ""),
+  footerRight: "Management · Architecture · Cloud · IA · Web3",
+  legalLink: "Mentions légales",
+  legalTitle: "Mentions légales",
+  /* ============================================================
+     MENTIONS LÉGALES (FR)
+     ============================================================ */
+  legalHtml: `
+    <h4>Éditeur du site</h4>
+    <p>Le présent site est édité par <strong>${CONFIG.OWNER_NAME}</strong>, S.U.R.L. enregistrée à MONACO sous le numéro RCI 26S10240.<br/>
+    Contact : <strong>${CONFIG.CONTACT_EMAIL}</strong></p>
+    <h4>Hébergement</h4>
+    <p>Le site est hébergé par <strong>GitHub, Inc.</strong>, 88 Colin P Kelly Jr. Street, San Francisco, CA 94107, États-Unis — <a href="https://www.github.com" target="_blank" rel="noopener">www.github.com</a> (service GitHub Pages).</p>
+    <p>Lors de la consultation du site, GitHub peut collecter des données techniques (adresses IP, journaux de connexion) sur des serveurs pouvant être situés hors de l'Union européenne. Ces transferts sont encadrés par les clauses contractuelles types approuvées par la Commission européenne.</p>
+    <h4>Propriété intellectuelle</h4>
+    <p>L'ensemble des contenus de ce site (textes, logo, éléments graphiques) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou adaptation, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+    <h4>Responsabilité</h4>
+    <p>Les informations publiées sont fournies à titre indicatif et peuvent évoluer sans préavis. L'éditeur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site ou des informations qu'il contient.</p>
+    <h4>Données personnelles (RGPD)</h4>
+    <p>Le formulaire de contact transmet vos coordonnées uniquement à l'adresse <strong>${CONFIG.CONTACT_EMAIL}</strong>, dans le seul but de répondre à votre demande. Aucune donnée n'est stockée, cédée ni utilisée à des fins publicitaires. Conformément au Règlement Général sur la Protection des Données, vous disposez d'un droit d'accès, de rectification et de suppression en écrivant à <strong>${CONFIG.CONTACT_EMAIL}</strong>.</p>
+    <h4>Cookies</h4>
+    <p>Ce site n'utilise aucun cookie de suivi. Seule votre préférence de langue est mémorisée localement dans votre navigateur.</p>
+  `
+},
+en: {
+  brand: CONFIG.OWNER_NAME,
+  nav: ["Home|hero","About|about","Services|services","Skills|skills","Experience|experience","Education|education","Contact|contact"],
+  heroKicker: "Independent consultant",
+  heroName: 'Your supportive <span class="accent">technology partner</span> driving <span class="accent">business performance</span>.',
+  heroRole: "Senior Program Manager · Cloud architecture · AI acceleration · Blockchain/Web3. More than 20 years designing, coding and shipping platforms for millions of users ; turning executive vision into roadmaps leadership can commit to.",
+  tags: ["Senior TPM","Azure · GCP","Applied AI","Blockchain / Web3","Data platforms","PMP · Agile at scale"],
+  ctaMain: "Let's discuss your project",
+  ctaAlt: "Explore my services",
+  panelTitle: "Key figures",
+  stats: [["20+","years of experience"],["4","industries"],["10–50","people in my teams"],["150+","applications served"]],
+  aboutKicker: "About",
+  aboutTitle: "Both sides of the table",
+  aboutSub: "Architect, developer, department head, founder: I speak engineer and board-room with equal fluency.",
+  aboutParas: [
+    "Independent consultant with an entrepreneur mindset, <strong>for more than 20 years on both sides of the table</strong>: designing, coding and delivering IT products and platforms for millions of users, while also engaging business and C-levels as an enterprise architect and department head.",
+    "Proven track record across <strong>Blockchain/Web3, Energy, Telecom and Travel</strong> industries: platform building, cloud architecture (GCP, Azure), AI leverage, software development and program management — including hiring and shaping teams of 10~50 people who deliver our promise to the business.",
+    "MSc split between computer science and strategy/marketing. Good at walking into an ambiguous technical situation, working out what the client is <em>really</em> needing and buying — and leading programs shipping it on time for the market."
+  ],
+  facts: [
+    ["Vision → Roadmap","Turning ambition into a roadmap leadership can commit to."],
+    ["Pragmatic cloud & AI","Azure, GCP, Kubernetes, AI guardrails for real adoption that drives business performance."],
+    ["Program & Delivery","IT investment or renovation, zero downtime migrations, deadlines met, technical and business teams aligned."],
+    ["Operational Web3","Open source protocols (Polkadot), prototypes business products, Developer Experience, conferences and hackathons."]
+  ],
+  svcKicker: "Services",
+  svcTitle: "What I can do for you",
+  svcSub: "Short focused engagements or multi-year programs: the same quality bar, from first audit to the last deliverables.",
+  services: [
+    { icon:"🎯", red:true, title:"Technical Program Management (TPM)", desc:"End-to-end steering of complex programs: roadmap, risks, multi-team synchronization, milestones and on-time market delivery.", tags:["Roadmaps","Risks","Multi-team","Go-To-Market"] },
+    { icon:"☁️", red:false, title:"Cloud architecture (Azure & GCP)", desc:"Hybrid and sovereign cloud platform design: Kubernetes, micro-datacenters, multi-sites/regions, DevOps/SRE standards.", tags:["Azure","GCP","AKS","Kubernetes","DevOps"] },
+    { icon:"🤖", red:true, title:"Applied AI & rapid prototyping", desc:"Use-case audit, guardrail definition and fast prototyping with AI tooling (ex: Claude, DeepSeek) to accelerate your teams and products.", tags:["Claude","DeepSeek","Azure AI"] },
+    { icon:"⛓️", red:false, title:"Blockchain & Web3", desc:"Decentralized product prototyping on open source (Polkadot), network observability, developer experience, organizing events and hackathons.", tags:["Polkadot","DevEx","Prototypes"] },
+    { icon:"🗄️", red:false, title:"Data platforms & streaming", desc:"Zero-downtime migrations, automated pipelines, streaming and analytics: Cassandra, Kafka, Spark, Hadoop, PostgreSQL.", tags:["Cassandra","Kafka","Spark"] },
+    { icon:"🚀", red:true, title:"IT transformation & team coaching", desc:"Engineering culture at scale: Scrum/Kanban, SAFe, software craftsmanship, hiring and coaching teams of 10~50 people.", tags:["SAFe","Agility","Team Lead"] }
+  ],
+  skKicker: "Skills",
+  skTitle: "My toolbox",
+  skSub: "A hands-on technical core, augmented by AI, in service of delivery.",
+  skills: [
+    { cat:"Cloud & DevOps", items:["Azure","GCP","Kubernetes / AKS","CloudFoundry","PaaS / CaaS","Linux"] },
+    { cat:"AI", items:["Claude (Anthropic)","DeepSeek","Claude Code","Azure AI","Business & IT use cases"] },
+    { cat:"Data", items:["Apache Cassandra","Kafka","Spark","Hadoop","MySQL Cluster","PostgreSQL"] },
+    { cat:"Web3", items:["Polkadot","Testnets","Agents","Individuality","Token payments"] },
+    { cat:"Management", items:["PMP®","Scrum","Kanban","SAFe®","€8~10M budgets","OKR and Roadmap"] },
+    { cat:"Engineering", items:["Cloud","Pub/Sub","ETL","Databases","Event-driven architecture","API design"] }
+  ],
+  xpKicker: "Track record",
+  xpTitle: "Experience",
+  xpSub: "From mission-critical platforms to Web3 prototypes: one constant, to serve the business for better customer satisfaction.",
+  xp: [
+    { role:"Senior Technical Program Manager", co:"Blockchain/Web3", period:"2024 – 2026", 
+    desc:"Product Engineering: prototyping products that demonstrate the Polkadot open source protocol capabilities and boosting the developer experience.", 
+    bullets:[
+      "Product roadmaps syncing 4 Engineering departments, leveraging AI tooling (Claude Code, DeepSeek) to supervise, manage risks and secure the delivery.",
+      "Co-led the Web3 Summit 2026 tech delivery track: a Polkadot-based Web3 stack used by 800+ attendees and 100+ developers, mobile app, token-only food/beverage payments, a Web2-like UX.",
+      "Led the implementation of 'dot.li', the Web decentralized Polkadot user agent to navigate the products ecosystem."] 
+    },
+    { role:"Founder & CEO — Independent IT consultant", co:"Ayon3", period:"Since 2024", 
+    desc:"Consulting and supporting companies on technical programs, cloud and AI.", bullets:[] 
+    },
+    { role:"IT Enterprise Architect", co:"Oil and Gas", period:"2023 – 2024", 
+    desc:"Company-level Cloud and AI technologies leveraging (with Microsoft Azure) coupled with onshore and offshore datacenters (FPSO).", 
+    bullets:[
+      "Designed and implemented a private Azure Kubernetes Service as the standard runtime for all containerized apps.",
+      "Audited and activated AI services for exploration & production, defining adoption guardrails.",
+      "Reference architectures: AI-driven process automation, web apps, oil production software."] 
+    },
+    { role:"Head of Links Digital Experiences", co:"Telecoms", period:"2019 – 2023", 
+    desc:"Led a 20-person department (architecture, strategy, business development, agile coaching, UX/UI, FabLab) within a 600-person IT domain.", 
+    bullets:[
+      "Board of Architects member, reporting to C-levels, collaborating with external advisors from Oliver Wyman and BCG.",
+      "Shaped the French division's cloud strategy (GCP, Azure, on-premise) and IT renovation agenda (€8~10M yearly budget): open source first, APIs, event-driven architecture, data platforms, AI.",
+      "Drove the IT domain transformation through the French IT-S reorganization (15,000 employees) and scaled the Cloud engineering culture (Scrum, Kanban, SAFe, DevOps, CloudFoundry, Kubernetes).",
+      "Represented our French division's architecture at AF2M (Association of French mobile operators)."] 
+    },
+    { role:"Senior Technical Program Manager / Lead Architect — Smart Data Factory", co:"Telecoms", period:"2015 – 2018", 
+    desc:"Lead architect and program manager for the group's Cassandra-based data platform.", 
+    bullets:[
+      "Zero-downtime migration of the production platform from MySQL Cluster/PostgreSQL to Apache Cassandra.",
+      "Streaming and analytics (Kafka, Spark, Hadoop), generic data integration pipeline designed for files or realtime flows.",
+      "Replicated 50+ data sources from the French division's IS, serving 150+ company-level applications (Web, Mobile, TV, Retail)."] 
+    },
+    { role:"Senior IT consultant & project manager", co:"IT services & software vendors", period:"2005 – 2015", 
+    desc:"From ETL development to leading a 25-consultant team serving large accounts and startups.", 
+    bullets:[
+      "Managed a client portfolio: Defense & Space, Travel & Leisure, Tech startups.",
+      "Built ETL software for distributed data platform (MySQL Cluster, PostgreSQL), then leading the client integrations.",
+      "Led technical migrations between licensed products (ex: IBM, Oracle) and open source solutions built internally."] 
+    }
+  ],
+  eduKicker: "Education & certifications",
+  eduTitle: "Degrees and certifications",
+  eduSub: "A background at the crossroads of technology and strategy.",
+  edu: [
+    { badge:"MSc", title:"Cardiff University", desc:"MSc: computer science, marketing, strategic management, business administration (2005)." },
+    { badge:"Master", title:"Polytech Nice Sophia", desc:"Master's degree in information technology (2005)." },
+    { badge:"Certification", title:"PMP® — Project Management Institute", desc:"Certified Project Management Professional (2016)." },
+    { badge:"Certification", title:"SAFe® 4 Agilists", desc:"Certified RTE, System Architect (2018)." },
+    { badge:"Certification", title:"Google Cloud Platform", desc:"Certified Professional Cloud Architect (2023)." }
+  ],
+  ctKicker: "Contact",
+  ctTitle: "Let's talk about your project",
+  ctSub: "Audit, prototype, multi-month program or a simple question: I meet your needs.",
+  ctInfoTitle: "Details",
+  ctInfoWhere: "Based in " + CONFIG.LOCATION + " — from on-site to remote engagements.",
+  ctInfoAvail: "Available for short or long term missions, in the Principality and internationally.",
+  ctInfoProTitle: "Headquarters",
+  ctInfoProName: "S.U.R.L. AYON3",
+  ctInfoProAddress: "17, Avenue Albert II",
+  ctInfoProCity: "98000 MONACO - Principality of Monaco",
+  formTitle: "Send a message",
+  lblName: "Name *",
+  lblEmail: "Email *",
+  lblCompany: "Company",
+  lblTopic: "Topic",
+  topics: ["Audit / scoping","Program management","Architecture & Cloud","AI","Web3 / other"],
+  lblMsg: "Your message *",
+  btnSend: "Send",
+  formNote: " * required fields. Your data is only used to reply to you.",
+  formOk: "Your email client is opening with a pre-filled message — just hit \"Send\". If nothing happens, write me directly at:",
+  formOkFs: "Message sent! I'll get back to you shortly. (Remember to confirm the first FormSubmit activation email.)",
+  formErr: "Please provide at least your name, a valid email and your message.",
+  footerLeft: "© " + new Date().getFullYear() + " " + CONFIG.OWNER_NAME + ". All rights reserved." + (CONFIG.FOOTER_NOTE ? " " + CONFIG.FOOTER_NOTE : ""),
+  footerRight: "Management · Architecture · Cloud · AI · Web3",
+  legalLink: "Legal notice",
+  legalTitle: "Legal notice",
+  /* ============================================================
+     LEGAL NOTICE (EN)
+     ============================================================ */
+  legalHtml: `
+    <h4>Publisher</h4>
+    <p>This website is published by <strong>${CONFIG.OWNER_NAME}</strong>, a sole person LLC registered in MONACO under the RCI number 26S10240.<br/>
+    Contact: <strong>${CONFIG.CONTACT_EMAIL}</strong></p>
+    <h4>Hosting</h4>
+    <p>This website is hosted by <strong>GitHub, Inc.</strong>, 88 Colin P Kelly Jr. Street, San Francisco, CA 94107, United States — <a href="https://www.github.com" target="_blank" rel="noopener">www.github.com</a> (GitHub Pages service).</p>
+    <p>When browsing the site, GitHub may collect technical data (IP addresses, connection logs) on servers that may be located outside the European Union. Such transfers are governed by the Standard Contractual Clauses approved by the European Commission.</p>
+    <h4>Intellectual property</h4>
+    <p>All content on this site (texts, logo, graphic elements) is protected by intellectual property law. Any reproduction, representation or adaptation, in whole or in part, without prior written authorization is prohibited.</p>
+    <h4>Liability</h4>
+    <p>The information published is provided for indicative purposes and may change without notice. The publisher cannot be held liable for any direct or indirect damage resulting from the use of the site or the information it contains.</p>
+    <h4>Personal data (GDPR)</h4>
+    <p>The contact form sends your details only to <strong>${CONFIG.CONTACT_EMAIL}</strong>, for the sole purpose of answering your request. No data is stored, transferred or used for advertising purposes. In accordance with the General Data Protection Regulation, you have the right to access, rectify and delete your data by writing to <strong>${CONFIG.CONTACT_EMAIL}</strong>.</p>
+    <h4>Cookies</h4>
+    <p>This site uses no tracking cookies. Only your language preference is stored locally in your browser.</p>
+  `
+}
+};
+
+/* ================================================================
+   RENDU / LOGIQUE — NE PAS EDITER SAUF SI NECESSAIRE
+   ================================================================ */
+let LANG = "fr";
+
+function t(key) { return DATA[LANG][key]; }
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function render() {
+  const d = DATA[LANG];
+  document.documentElement.lang = LANG;
+  document.getElementById("brandName").textContent = d.brand;
+  document.getElementById("btnFr").classList.toggle("active", LANG === "fr");
+  document.getElementById("btnEn").classList.toggle("active", LANG === "en");
+
+  document.getElementById("navLinks").innerHTML = d.nav.map(n => {
+    const [label, id] = n.split("|");
+    return '<li><a href="#' + id + '" data-nav="' + id + '">' + label + "</a></li>";
+  }).join("");
+
+  document.getElementById("heroKicker").textContent = d.heroKicker;
+  document.getElementById("heroName").innerHTML = d.heroName;
+  document.getElementById("heroRole").textContent = d.heroRole;
+  document.getElementById("heroTags").innerHTML = d.tags.map((x,i) => '<span class="chip' + (i===0?" red":"") + '">' + esc(x) + "</span>").join("");
+  document.getElementById("ctaMain").textContent = d.ctaMain;
+  document.getElementById("ctaAlt").textContent = d.ctaAlt;
+  document.getElementById("panelTitle").textContent = d.panelTitle;
+  document.getElementById("statGrid").innerHTML = d.stats.map(s => '<div class="stat"><b>' + esc(s[0]) + "</b><span>" + esc(s[1]) + "</span></div>").join("");
+
+  document.getElementById("aboutKicker").textContent = d.aboutKicker;
+  document.getElementById("aboutTitle").textContent = d.aboutTitle;
+  document.getElementById("aboutSub").textContent = d.aboutSub;
+  document.getElementById("aboutText").innerHTML = d.aboutParas.map(p => "<p>" + p + "</p>").join("");
+  document.getElementById("aboutFacts").innerHTML = d.facts.map(f => "<li><b>" + esc(f[0]) + "</b>" + esc(f[1]) + "</li>").join("");
+
+  document.getElementById("svcKicker").textContent = d.svcKicker;
+  document.getElementById("svcTitle").textContent = d.svcTitle;
+  document.getElementById("svcSub").textContent = d.svcSub;
+  document.getElementById("servicesGrid").innerHTML = d.services.map(s =>
+    '<article class="metal-card bolts svc reveal"><div class="icon ' + (s.red ? "red" : "steel") + '">' + s.icon + '</div><h3>' + esc(s.title) + "</h3><p>" + esc(s.desc) + "</p><div class='tags'>" + s.tags.map(t2 => "<span>" + esc(t2) + "</span>").join("") + "</div></article>"
+  ).join("");
+
+  document.getElementById("skKicker").textContent = d.skKicker;
+  document.getElementById("skTitle").textContent = d.skTitle;
+  document.getElementById("skSub").textContent = d.skSub;
+  document.getElementById("skillsGrid").innerHTML = d.skills.map(sk =>
+    '<div class="metal-card skill-cat reveal"><h3>' + esc(sk.cat) + '</h3><div class="skill-items">' + sk.items.map(i => "<span>" + esc(i) + "</span>").join("") + "</div></div>"
+  ).join("");
+
+  document.getElementById("xpKicker").textContent = d.xpKicker;
+  document.getElementById("xpTitle").textContent = d.xpTitle;
+  document.getElementById("xpSub").textContent = d.xpSub;
+  document.getElementById("timeline").innerHTML = d.xp.map(x =>
+    '<div class="xp-item reveal"><div class="metal-card xp-card"><div class="xp-head"><div><h3>' + esc(x.role) + '</h3><div class="co">' + esc(x.co) + '</div></div><div class="xp-period">' + esc(x.period) + "</div></div><p>" + esc(x.desc) + "</p>" + (x.bullets.length ? "<ul>" + x.bullets.map(b => "<li>" + esc(b) + "</li>").join("") + "</ul>" : "") + "</div></div>"
+  ).join("");
+
+  document.getElementById("eduKicker").textContent = d.eduKicker;
+  document.getElementById("eduTitle").textContent = d.eduTitle;
+  document.getElementById("eduSub").textContent = d.eduSub;
+  document.getElementById("eduGrid").innerHTML = d.edu.map(e =>
+    '<div class="metal-card edu reveal"><span class="badge">' + esc(e.badge) + '</span><h3>' + esc(e.title) + "</h3><p>" + esc(e.desc) + "</p></div>"
+  ).join("");
+
+  document.getElementById("ctKicker").textContent = d.ctKicker;
+  document.getElementById("ctTitle").textContent = d.ctTitle;
+  document.getElementById("ctSub").textContent = d.ctSub;
+  document.getElementById("ctInfoTitle").textContent = d.ctInfoTitle;
+  document.getElementById("ctInfoWhere").textContent = d.ctInfoWhere;
+  document.getElementById("ctMail").textContent = CONFIG.CONTACT_EMAIL;
+  document.getElementById("ctInfoAvail").textContent = d.ctInfoAvail;
+  document.getElementById("ctInfoProTitle").textContent = d.ctInfoProTitle;
+  document.getElementById("ctInfoProName").textContent = d.ctInfoProName;
+  document.getElementById("ctInfoProAddress").textContent = d.ctInfoProAddress;
+  document.getElementById("ctInfoProCity").textContent = d.ctInfoProCity;
+  document.getElementById("formTitle").textContent = d.formTitle;
+  document.getElementById("lblName").textContent = d.lblName;
+  document.getElementById("lblEmail").textContent = d.lblEmail;
+  document.getElementById("lblCompany").textContent = d.lblCompany;
+  document.getElementById("lblTopic").textContent = d.lblTopic;
+  document.getElementById("lblMsg").textContent = d.lblMsg;
+  document.getElementById("btnSend").textContent = d.btnSend;
+  document.getElementById("formNote").textContent = d.formNote;
+  document.getElementById("footerLeft").textContent = d.footerLeft;
+  document.getElementById("footerRight").textContent = d.footerRight;
+  document.getElementById("legalLink").textContent = d.legalLink;
+  document.getElementById("legalTitle").textContent = d.legalTitle;
+  document.getElementById("legalBody").innerHTML = d.legalHtml;
+  /* --- Liste des "topics" dans le Formulaire --- */
+  const select = document.querySelector("#fTopic");
+
+  // Vide le select au cas où il contiendrait déjà des options
+  select.innerHTML = "";
+
+  // Génère les options
+  d.topics.forEach(topic => {
+    const option = document.createElement("option");
+
+    option.value = topic;
+    option.textContent = topic;
+
+    select.appendChild(option);
+  });
+
+  const form = document.getElementById("contactForm");
+  if (CONFIG.FORM_MODE === "formsubmit") {
+    form.action = "https://formsubmit.co/" + encodeURIComponent(CONFIG.CONTACT_EMAIL);
+    form.method = "POST";
+    if (!document.getElementById("fsCaptcha")) {
+      const hid = document.createElement("input");
+      hid.type = "hidden"; hid.name = "_captcha"; hid.value = "false"; hid.id = "fsCaptcha";
+      form.appendChild(hid);
+    }
+  } else {
+    form.action = "#"; form.removeAttribute("method");
+  }
+  document.title = d.ctTitle ? (d.brand + " — " + d.svcKicker + " · " + d.footerRight) : document.title;
+  observeReveals();
+}
+
+/* --- Formulaire --- */
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  if (CONFIG.FORM_MODE === "formsubmit") return; /* envoi natif vers formsubmit.co */
+  e.preventDefault();
+  const st = document.getElementById("formStatus");
+  const name = document.getElementById("fName").value.trim();
+  const email = document.getElementById("fEmail").value.trim();
+  const company = document.getElementById("fCompany").value.trim();
+  const topic = document.getElementById("fTopic").value;
+  const msg = document.getElementById("fMsg").value.trim();
+  const d = DATA[LANG];
+  if (!name || !msg || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    st.className = "form-status err"; st.textContent = d.formErr; return;
+  }
+  const subject = "[Site web] " + topic + " — " + name;
+  const body =
+    "Nom : " + name + "\n" +
+    "Email : " + email + "\n" +
+    (company ? "Société : " + company + "\n" : "") +
+    "Sujet : " + topic + "\n\n" + msg;
+  window.location.href = "mailto:" + CONFIG.CONTACT_EMAIL +
+    "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  st.className = "form-status ok";
+  st.textContent = d.formOk + " " + CONFIG.CONTACT_EMAIL;
+});
+
+/* --- Stockage de la langue (protégé contre les environnements restreints) --- */
+function storeGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function storeSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+/* --- Langues --- */
+document.getElementById("btnFr").addEventListener("click", () => { LANG = "fr"; storeSet("siteLang", "fr"); render(); });
+document.getElementById("btnEn").addEventListener("click", () => { LANG = "en"; storeSet("siteLang", "en"); render(); });
+
+/* --- Menu mobile --- */
+document.getElementById("burger").addEventListener("click", () => {
+  document.getElementById("navLinks").classList.toggle("open");
+});
+document.querySelectorAll("#navLinks").forEach(ul => ul.addEventListener("click", () => ul.classList.remove("open")));
+
+/* --- Apparition au scroll --- */
+let io = null;
+function observeReveals() {
+  if (!("IntersectionObserver" in window)) {
+    document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    return;
+  }
+  if (!io) io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } }), { threshold: .12 });
+  document.querySelectorAll(".reveal:not(.visible)").forEach(el => io.observe(el));
+}
+
+/* --- Overlay Mentions légales --- */
+const legalOverlay = document.getElementById("legalOverlay");
+document.getElementById("legalLink").addEventListener("click", function (e) {
+  e.preventDefault();
+  legalOverlay.classList.add("open");
+});
+document.getElementById("legalClose").addEventListener("click", function () {
+  legalOverlay.classList.remove("open");
+});
+legalOverlay.addEventListener("click", function (e) {
+  if (e.target === legalOverlay) legalOverlay.classList.remove("open");
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") legalOverlay.classList.remove("open");
+});
+
+/* --- Init --- */
+const saved = storeGet("siteLang");
+LANG = (saved === "en" || saved === "fr") ? saved : (navigator.language || "").toLowerCase().startsWith("fr") ? "fr" : "fr";
+render();
+</script>
 </body>
 </html>
